@@ -1,4 +1,4 @@
-require 'lib/helpers/git_helper'
+require File.join(File.dirname(__FILE__), '../lib/helpers/git_helper')
 
 namespace :flipper do
   desc 'Install flipper'

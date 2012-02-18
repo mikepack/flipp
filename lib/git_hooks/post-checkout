@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require 'rubygems'
-require File.join(File.dirname(__FILE__), '../flipper')
+require File.join(File.dirname(__FILE__), '../../lib/flipper')
 # require 'flipper'
 
 if ARGV[2] == '1' # This was a branch switch
