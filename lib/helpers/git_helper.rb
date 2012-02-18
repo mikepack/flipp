@@ -19,4 +19,8 @@ module GitHelper
     # Move hook into place
     
   end
+
+  def self.uninstall_hook
+    FileUtils.rm File.expand_path('.git/hooks/post-checkout')
+  end
 end

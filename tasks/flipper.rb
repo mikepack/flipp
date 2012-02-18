@@ -12,6 +12,7 @@ namespace :flipper do
   desc 'Uninstall flipper'
   task :uninstall do
     # Remove git hook
+    GitHelper.uninstall_hook
     
     # Remove Rails initializer
   end
