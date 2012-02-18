@@ -1,1 +1,10 @@
-echo 'Switching branches...'
+#!/usr/bin/env ruby
+require 'rubygems'
+require File.join(File.dirname(__FILE__), '../flipper')
+# require 'flipper'
+
+if ARGV[2] == '1' # This was a branch switch
+  branch = `git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* /\1/'`
+  flipper = Flipper.new(branch)
+  flipper.switch_databases
+end
