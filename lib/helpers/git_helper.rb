@@ -9,6 +9,7 @@ module GitHelper
       end
 
       # Copy the file to the git hooks
+      puts 'Moving git hook into place...'
       FileUtils.cp 'lib/git_hooks/post-checkout', File.expand_path('.git/hooks/post-checkout')
       # And give it execute permissions
       FileUtils.chmod 0755, '.git/hooks/post-checkout'
@@ -21,6 +22,7 @@ module GitHelper
   end
 
   def self.uninstall_hook
+    puts 'Removing git hook...'
     FileUtils.rm File.expand_path('.git/hooks/post-checkout')
   end
 end
