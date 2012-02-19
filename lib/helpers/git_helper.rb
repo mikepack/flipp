@@ -1,6 +1,10 @@
 require 'fileutils'
 
 module GitHelper
+  def self.hook_installed?
+    File.exists? '.git/hooks/post-checkout'
+  end
+
   def self.install_hook
     # Check for the .git directory
     if File.directory? '.git'
@@ -16,13 +20,14 @@ module GitHelper
     else
       puts "Can't find your .git directory. Are you at the root of your project?"
     end
-    
-    # Move hook into place
-    
   end
 
   def self.uninstall_hook
     puts 'Removing git hook...'
     FileUtils.rm File.expand_path('.git/hooks/post-checkout')
+  end
+
+  def self.current_branch
+    `git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* /\1/'`.chomp[1..-1] # Remove control character
   end
 end

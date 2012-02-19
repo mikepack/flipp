@@ -1,19 +1,15 @@
 require File.join(File.dirname(__FILE__), '../lib/helpers/git_helper')
 
-namespace :flipper do
-  desc 'Install flipper'
+namespace :flipp do
+  desc 'Install flipp'
   task :install do
     # Move git hook into place
     GitHelper.install_hook
-    
-    # Move Rails database switch to initializers
   end
 
-  desc 'Uninstall flipper'
+  desc 'Uninstall flipp'
   task :uninstall do
     # Remove git hook
     GitHelper.uninstall_hook
-    
-    # Remove Rails initializer
   end
 end

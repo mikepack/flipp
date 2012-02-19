@@ -1,10 +1,9 @@
 #!/usr/bin/env ruby
 require 'rubygems'
-require File.join(File.dirname(__FILE__), '../../lib/flipper')
-# require 'flipper'
+require File.join(File.dirname(__FILE__), '../../lib/flipp')
+# require 'flipp'
 
 if ARGV[2] == '1' # This was a branch switch
-  branch = `git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* /\1/'`
-  flipper = Flipper.new(branch)
-  flipper.switch_databases
+  flipp = Flipp.new
+  flipp.switch_databases
 end
