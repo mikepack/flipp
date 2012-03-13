@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Flipp do
-  let(:flipp) { Flipp.new('new_feature_branch') }
+describe Flipp::Flipp do
+  let(:flipp) { Flipp::Flipp.new('new_feature_branch') }
   let(:old_db) { {:adapter => 'mysql2', :host => 'localhost', :username => 'root', :database => 'old_db'} }
   let(:new_db) { {:adapter => 'mysql2', :host => 'localhost', :username => 'root', :database => 'new_db'} }
 
@@ -40,6 +40,7 @@ describe Flipp do
 
   describe '#create_and_copy_data!' do
     it 'copies the database' do
+      ActiveRecord::Base.stub(:establish_connection)
       flipp.should_receive(:copy_data).with(old_db, new_db)
       flipp.create_and_copy_data!(old_db, new_db)
     end
