@@ -1,9 +1,0 @@
-#!/usr/bin/env ruby
-require 'rubygems'
-require File.join(File.dirname(__FILE__), '../../lib/flipp')
-# require 'flipp'
-
-if ARGV[2] == '1' # This was a branch switch
-  flipp = Flipp.new
-  flipp.switch_databases
-end

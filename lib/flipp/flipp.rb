@@ -12,13 +12,14 @@ module Flipp
 
     def switch_databases
       current_config = ActiveRecord::Base.connection_pool.spec.config
-      new_config = current_config.merge!({:database => new_database_name(current_config)})
+      new_config = current_config.merge({:database => new_database_name(current_config)})
 
       puts "Switching databases (#{new_config[:database]})..."
 
       # Try connecting to the new database
       begin
-        ActiveRecord::Base.establish_connection new_config
+        connection = ActiveRecord::Base.establish_connection new_config
+        connection.checkout
       rescue
         create_new_db_or_fallback current_config, new_config
       end

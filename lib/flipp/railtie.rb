@@ -9,9 +9,5 @@ module Flipp
         flipp.switch_databases
       end
     end
-
-    rake_tasks do
-      load 'flipp/tasks.rb'
-    end
   end
 end

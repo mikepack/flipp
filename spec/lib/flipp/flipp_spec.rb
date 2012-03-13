@@ -12,7 +12,7 @@ describe Flipp::Flipp do
     end
 
     it 'tries to connect to the new database' do
-      ActiveRecord::Base.should_receive(:establish_connection).with(an_instance_of(Hash))
+      ActiveRecord::Base.should_receive(:establish_connection).with(an_instance_of(Hash)).any_number_of_times
       flipp.switch_databases
     end
 
