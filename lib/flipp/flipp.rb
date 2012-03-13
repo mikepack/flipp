@@ -6,7 +6,7 @@ require File.join(File.dirname(__FILE__), 'helpers/git_helper')
 # The Flipp class orchestrates the actual switching of databaseses
 module Flipp
   class Flipp
-    def initialize(branch = Flipp::GitHelper.current_branch)
+    def initialize(branch = ::Flipp::Helpers::GitHelper.current_branch)
       @branch = branch
     end
 
