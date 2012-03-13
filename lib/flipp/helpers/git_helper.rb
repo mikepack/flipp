@@ -16,7 +16,7 @@ module Flipp
 
           # Copy the file to the git hooks
           puts 'Moving git hook into place...'
-          FileUtils.cp 'lib/flipp/git_hooks/post-checkout', File.expand_path('.git/hooks/post-checkout')
+          FileUtils.cp File.join(File.dirname(__FILE__), '..', 'git_hooks/post-checkout'), File.join(Rails.root, '.git/hooks/post-checkout')
           # And give it execute permissions
           FileUtils.chmod 0755, '.git/hooks/post-checkout'
         else
@@ -26,7 +26,7 @@ module Flipp
 
       def self.uninstall_hook
         puts 'Removing git hook...'
-        FileUtils.rm File.expand_path('.git/hooks/post-checkout')
+        FileUtils.rm File.join(Rails.root, '.git/hooks/post-checkout')
       end
 
       def self.current_branch

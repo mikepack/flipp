@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe Flipp::Helpers::GitHelper do
+  before do
+    module Rails; end
+    Rails.stub(:root).and_return(File.join(File.dirname(__FILE__), '..', '..', '..', '..'))
+  end
+
   describe '#hook_installed?' do
     it 'returns true when the hook exists' do
       FileUtils.touch '.git/hooks/post-checkout'
