@@ -5,7 +5,7 @@ require 'bundler'
 
 Gem::Specification.new do |s|
   s.name        = "flipp"
-  s.version     = '0.0.2.1'
+  s.version     = '0.0.2.2'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Mike Pack"]
   s.email       = ["mikepackdev@gmail.com"]
