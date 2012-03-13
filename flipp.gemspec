@@ -5,7 +5,7 @@ require 'bundler'
 
 Gem::Specification.new do |s|
   s.name        = "flipp"
-  s.version     = '0.0.2.5'
+  s.version     = '0.0.2.6'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Mike Pack"]
   s.email       = ["mikepackdev@gmail.com"]
@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'activerecord'
   s.add_runtime_dependency 'database_exporter'
 
-  s.files = %w( README.md Rakefile flipp.gemspec ) + Dir["lib/**/*.rb"]
+  s.files = %w( README.md Rakefile flipp.gemspec ) + Dir["lib/**/*.rb"] + Dir["lib/flipp/git_hooks/*"]
   s.test_files = Dir["spec/**/*.rb"]
   s.require_paths = ["lib"]
 end
