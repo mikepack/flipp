@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'activerecord'
   s.add_runtime_dependency 'database_exporter'
 
-  s.files = %w( README.md Rakefile flipp.gemspec tasks/flipp.rb ) + Dir["lib/**/*.rb"]
+  s.files = %w( README.md Rakefile flipp.gemspec ) + Dir["lib/**/*.rb"]
   s.test_files = Dir["spec/**/*.rb"]
   s.require_paths = ["lib"]
 end
