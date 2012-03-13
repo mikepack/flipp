@@ -5,10 +5,6 @@ require File.join(File.dirname(__FILE__), 'helpers/git_helper')
 
 # The Flipp class orchestrates the actual switching of databaseses
 module Flipp
-  # Allow storage of the gem's root directory (to build paths)
-  class << self; attr_accessor :root end
-  @root = File.dirname(__FILE__)
-
   class Flipp
     def initialize(branch = Flipp::GitHelper.current_branch)
       @branch = branch

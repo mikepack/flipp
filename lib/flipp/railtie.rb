@@ -5,7 +5,7 @@ module Flipp
     initializer "restablish_connection.configure_rails_initialization" do
       if Rails.env.development? and ::Flipp::Helpers::GitHelper.hook_installed?
         # Use the connection determined by flipp
-        flipp = Flipp::Flipp.new
+        flipp = ::Flipp::Flipp.new
         flipp.switch_databases
       end
     end
